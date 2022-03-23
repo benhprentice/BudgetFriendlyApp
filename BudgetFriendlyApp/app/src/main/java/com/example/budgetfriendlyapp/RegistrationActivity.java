@@ -18,46 +18,40 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+
+public class RegistrationActivity extends AppCompatActivity {
 
     private EditText mEmail;
     private EditText mPass;
-    private Button btnLogin;
-    private TextView mForgetPassword;
-    private TextView mSignupHere;
+    private Button btnReg;
+    private TextView mSignin;
 
     private ProgressDialog mDialog;
 
     //Firebase
-
     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_registration);
 
         mAuth=FirebaseAuth.getInstance();
 
-        //comment if statement to bring back login page
-        if(mAuth.getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-        }
-
         mDialog=new ProgressDialog(this);
 
-        loginDetails();
+        registration();
     }
 
-    private void loginDetails(){
+    private void registration(){
 
-        mEmail=findViewById(R.id.email_login);
-        mPass=findViewById(R.id.password_login);
-        btnLogin=findViewById(R.id.btn_login);
-        mForgetPassword=findViewById(R.id.forget_password);
-        mSignupHere=findViewById(R.id.signup_reg);
+        mEmail=findViewById(R.id.email_reg);
+        mPass=findViewById(R.id.password_reg);
+        btnReg=findViewById(R.id.btn_reg);
+        mSignin=findViewById(R.id.signin_here);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+
+        btnReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -65,52 +59,44 @@ public class MainActivity extends AppCompatActivity {
                 String pass=mPass.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)){
-                    mEmail.setError("Email Required..");
+                    mEmail.setError("Email Required!");
                     return;
                 }
                 if (TextUtils.isEmpty(pass)){
-                    mPass.setError("Password Required..");
+                    mPass.setError("Password Required!");
                     return;
                 }
 
-                mDialog.setMessage("Loading..");
+                mDialog.setMessage("Financial Stability is Loading..");
                 mDialog.show();
 
-                mAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                mAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+
                         if (task.isSuccessful()){
 
                             mDialog.dismiss();
+
+                            Toast.makeText(getApplicationContext(),"Registration Complete", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                            Toast.makeText(getApplicationContext(),"Login Successful",Toast.LENGTH_SHORT).show();
                         }
                         else{
                             mDialog.dismiss();
-                            Toast.makeText(getApplicationContext(),"Login Failed",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"Registration Failed", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+
             }
         });
 
-        //Registration activity
-
-        mSignupHere.setOnClickListener(new View.OnClickListener() {
+        mSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),RegistrationActivity.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
-
-        //Reset password activity
-
-        mForgetPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),ResetActivity.class));
-            }
-        });
-
     }
+
 }

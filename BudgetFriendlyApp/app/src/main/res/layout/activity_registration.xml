@@ -7,7 +7,7 @@
     android:gravity="center"
     android:background="@drawable/background_color"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".RegistrationActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,8 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Welcome to Budget Friendly"
-                android:padding="15dp"
+                android:text="Registration"
                 android:textColor="@color/white"
                 android:textAppearance="?android:textAppearanceLarge"
                 android:gravity="center"
@@ -36,7 +35,7 @@
                 android:hint="Email: "
                 android:background="@drawable/edittext_background"
                 android:padding="15dp"
-                android:id="@+id/email_login"
+                android:id="@+id/email_reg"
                 />
 
             <EditText
@@ -46,17 +45,17 @@
                 android:hint="Password: "
                 android:background="@drawable/edittext_background"
                 android:padding="15dp"
-                android:id="@+id/password_login"
+                android:id="@+id/password_reg"
                 />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Log In"
+                android:text="Finish"
                 android:background="@drawable/edittext_background"
                 android:padding="15dp"
-                android:id="@+id/btn_login"
+                android:id="@+id/btn_reg"
                 android:textAppearance="?android:textAppearanceMedium"
                 />
 
@@ -65,21 +64,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:id="@+id/forget_password"
-                android:text="Forgot Password"
-                android:padding="5dp"
-                />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:id="@+id/signup_reg"
-                android:text="Create Account"
+                android:id="@+id/signin_here"
+                android:text="Already have an account? Sign in here."
                 android:padding="5dp"
                 />
 
         </LinearLayout>
+
     </ScrollView>
+
 </LinearLayout>
