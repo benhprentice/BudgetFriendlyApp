@@ -9,5 +9,13 @@
     <string name="expense">Expense</string>
     <string name="settings">Settings</string>
 
+    <string-array name="items">
+        <item>select item</item>
+        <item>Transport</item>
+        <item>Food</item>
+        <item>Entertainment</item>
+        <item>Other</item>
+    </string-array>
+
 
 </resources>
