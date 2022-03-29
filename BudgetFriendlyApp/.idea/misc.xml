@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/spitz/OneDrive/Desktop/BudgetFriendlyApp/BudgetFriendlyApp/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/spitz/OneDrive/Desktop/BudgetFriendlyApp/BudgetFriendlyApp/app/src/main/res/layout/content_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/spitz/OneDrive/Desktop/BudgetFriendlyApp/BudgetFriendlyApp/app/src/main/res/layout/fragment_expense.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/spitz/OneDrive/Desktop/BudgetFriendlyApp/BudgetFriendlyApp/app/src/main/res/layout/fragment_home_page.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/spitz/OneDrive/Desktop/BudgetFriendlyApp/BudgetFriendlyApp/app/src/main/res/layout/fragment_income.xml" value="0.25" />
         <entry key="app/src/main/res/drawable-anydpi/expense.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/background_color.xml" value="0.2085" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.2296875" />

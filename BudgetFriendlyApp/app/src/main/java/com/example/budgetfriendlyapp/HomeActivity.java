@@ -23,8 +23,6 @@ public class HomeActivity extends AppCompatActivity {
     private ExpenseFragment expenseFragment;
     private SettingsFragment settingsFragment;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +35,6 @@ public class HomeActivity extends AppCompatActivity {
         incomeFragment=new IncomeFragment();
         expenseFragment=new ExpenseFragment();
         settingsFragment=new SettingsFragment();
-
-
 
         //first page that opens
         setFragment(homePageFragment);
