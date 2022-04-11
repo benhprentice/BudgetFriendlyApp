@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,13 +48,32 @@ public class IncomeFragment extends Fragment {
         return fragment;
     }
 
+    Button btn;
+    TextView txt, txt2;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        txt= (TextView) txt.findViewById(R.id.listOfIncomeAmounts);
+        txt2= (TextView) txt2.findViewById(R.id.listOfIncomeNames);
+        btn= (Button) btn.findViewById(R.id.addIncomeButton);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String name= v.getContext().getString(Integer.parseInt("@+id/amount"));
+                txt.setText(name);
+                String name2= v.getContext().getString(Integer.parseInt("@+id/note"));
+                txt.setText(name2);
+                //txt2.setText(R.id.note);
+            }
+        });
+
     }
 
     @Override

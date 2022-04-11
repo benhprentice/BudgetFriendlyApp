@@ -158,16 +158,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <Button
-                android:id="@+id/save"
+                android:id="@+id/addIncomeButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
                 android:background="@drawable/edittext_background"
                 android:text="Add"
-                android:textColor="@color/white"
                 android:textAllCaps="false"
-                android:textStyle="bold"
-                android:layout_margin="2dp" />
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
