@@ -54,18 +54,19 @@ public class IncomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        txt= (TextView) txt.findViewById(R.id.listOfIncomeAmounts);
-        txt2= (TextView) txt2.findViewById(R.id.listOfIncomeNames);
-        btn= (Button) btn.findViewById(R.id.addIncomeButton);
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
+        btn= (Button) btn.findViewById(R.id.addIncomeButton);
 
         btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                txt= (TextView) txt.findViewById(R.id.listOfIncomeAmounts);
+                txt2= (TextView) txt2.findViewById(R.id.listOfIncomeNames);
                 String name= v.getContext().getString(Integer.parseInt("@+id/amount"));
                 txt.setText(name);
                 String name2= v.getContext().getString(Integer.parseInt("@+id/note"));

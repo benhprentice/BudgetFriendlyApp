@@ -43,7 +43,7 @@
             android:gravity="center">
 
             <TextView
-                android:id="@+id/Category"
+                android:id="@+id/Category1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -81,7 +81,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/Category"
+                    android:id="@+id/Category2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -149,6 +149,7 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/edittext_background"
                 android:hint="Enter category"
+                android:inputType="text"
                 android:padding="15dp"
                 android:textColor="#000"
                 android:textColorHint="#000" />

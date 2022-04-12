@@ -15,6 +15,7 @@
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.2296875" />
         <entry key="app/src/main/res/layout/activity_reset.xml" value="0.2296875" />
         <entry key="app/src/main/res/layout/fragment_expense.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_income.xml" value="0.24375" />
       </map>
     </option>
   </component>
