@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +21,10 @@ import androidx.fragment.app.Fragment;
  * create an instance of this fragment.
  */
 public class ExpenseFragment extends Fragment {
+
+    EditText enterExpenseValue;
+    int expenseHeader;
+    String test = "This is a test";
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -81,10 +87,26 @@ public class ExpenseFragment extends Fragment {
                                      }
         );
 
+        int idView2 = getResources().getIdentifier("cancelExpense", "id", getContext().getPackageName());
+        View eventView2 = view.findViewById(idView2);
+        eventView2.setOnClickListener(new OnClickListener() {
+                                         @Override
+                                         public void onClick(View view) {
+                                             cancelExpenseMethod(view);
+                                         }
+                                     }
+        );
+
     }
 
     public void saveExpenseMethod (View view) {
-        value = 45;
+        Log.d( "Message:", "Success!");
+//        int idView = getResources().getIdentifier("expenseHeader2", "id", getContext().getPackageName());
+//        TextView expenseHeader = (TextView) view.findViewById(idView);
+//        expenseHeader.setText(test);
+    }
+
+    public void cancelExpenseMethod (View view) {
         Log.d( "Message:", "Success!");
     }
 

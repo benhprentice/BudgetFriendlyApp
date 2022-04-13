@@ -25,6 +25,7 @@
             android:orientation="horizontal"
             android:gravity="center">
             <TextView
+                android:id="@+id/expenseHeader2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Let's Talk Expenses"
@@ -82,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" >
                 <Button
-                    android:id="@+id/cancel"
+                    android:id="@+id/cancelExpense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext_background"

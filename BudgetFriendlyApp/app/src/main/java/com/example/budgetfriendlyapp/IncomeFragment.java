@@ -2,8 +2,11 @@ package com.example.budgetfriendlyapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,20 +63,6 @@ public class IncomeFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
 
         }
-//        btn= (Button) btn.findViewById(R.id.addIncomeButton);
-//
-//        btn.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                txt= (TextView) txt.findViewById(R.id.listOfIncomeAmounts);
-//                txt2= (TextView) txt2.findViewById(R.id.listOfIncomeNames);
-//                String name= v.getContext().getString(Integer.parseInt("@+id/amount"));
-//                txt.setText(name);
-//                String name2= v.getContext().getString(Integer.parseInt("@+id/note"));
-//                txt.setText(name2);
-//                //txt2.setText(R.id.note);
-//            }
-//        });
 
     }
 
@@ -83,4 +72,38 @@ public class IncomeFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_income, container, false);
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        int idView = getResources().getIdentifier("addIncomeButton", "id", getContext().getPackageName());
+        View eventView = view.findViewById(idView);
+        eventView.setOnClickListener(new View.OnClickListener() {
+                                         @Override
+                                         public void onClick(View view) {
+                                             saveIncomeMethod(view);
+                                         }
+                                     }
+        );
+//
+//        int idView2 = getResources().getIdentifier("cancelExpense", "id", getContext().getPackageName());
+//        View eventView2 = view.findViewById(idView2);
+//        eventView2.setOnClickListener(new View.OnClickListener() {
+//                                          @Override
+//                                          public void onClick(View view) {
+//                                              cancelIncomeMethod(view);
+//                                          }
+//                                      }
+//        );
+
+    }
+
+    public void saveIncomeMethod (View view) {
+        Log.d( "Message:", "Success!");
+    }
+
+//    public void cancelIncomeMethod (View view) {
+//        Log.d( "Message:", "Success!");
+//    }
 }
