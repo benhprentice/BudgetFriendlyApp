@@ -60,20 +60,20 @@ public class IncomeFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
 
         }
-        btn= (Button) btn.findViewById(R.id.addIncomeButton);
-
-        btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                txt= (TextView) txt.findViewById(R.id.listOfIncomeAmounts);
-                txt2= (TextView) txt2.findViewById(R.id.listOfIncomeNames);
-                String name= v.getContext().getString(Integer.parseInt("@+id/amount"));
-                txt.setText(name);
-                String name2= v.getContext().getString(Integer.parseInt("@+id/note"));
-                txt.setText(name2);
-                //txt2.setText(R.id.note);
-            }
-        });
+//        btn= (Button) btn.findViewById(R.id.addIncomeButton);
+//
+//        btn.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                txt= (TextView) txt.findViewById(R.id.listOfIncomeAmounts);
+//                txt2= (TextView) txt2.findViewById(R.id.listOfIncomeNames);
+//                String name= v.getContext().getString(Integer.parseInt("@+id/amount"));
+//                txt.setText(name);
+//                String name2= v.getContext().getString(Integer.parseInt("@+id/note"));
+//                txt.setText(name2);
+//                //txt2.setText(R.id.note);
+//            }
+//        });
 
     }
 
