@@ -25,6 +25,10 @@ public class IncomeFragment extends Fragment {
     EditText addIncomeBox;
     String incomeValue;
 
+    TextView eventView4;
+    EditText addCategoryBox;
+    String categoryValue;
+
     public IncomeFragment() {
     }
 
@@ -55,6 +59,12 @@ public class IncomeFragment extends Fragment {
         int idView4 = getResources().getIdentifier("amount", "id", getContext().getPackageName());
         addIncomeBox = view.findViewById(idView4);
 
+        int idView5 = getResources().getIdentifier("listOfIncomeNames", "id", getContext().getPackageName());
+        eventView4 = view.findViewById(idView5);
+
+        int idView6 = getResources().getIdentifier("note", "id", getContext().getPackageName());
+        addCategoryBox = view.findViewById(idView6);
+
         int idView = getResources().getIdentifier("addIncomeButton", "id", getContext().getPackageName());
         View eventView = view.findViewById(idView);
         eventView.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +81,9 @@ public class IncomeFragment extends Fragment {
         Log.d( "Message:", "Success!");
         incomeValue = addIncomeBox.getText().toString();
         eventView3.setText(incomeValue);
+
+        categoryValue = addCategoryBox.getText().toString();
+        eventView4.setText(categoryValue);
     }
 
 }
