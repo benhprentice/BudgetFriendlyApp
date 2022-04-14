@@ -17,6 +17,7 @@
         <entry key="app/src/main/res/layout/fragment_expense.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.228125" />
         <entry key="app/src/main/res/layout/fragment_income.xml" value="0.24375" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.22760416666666666" />
       </map>
     </option>
   </component>

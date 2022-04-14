@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -19,6 +20,10 @@ import android.widget.TextView;
  * create an instance of this fragment.
  */
 public class IncomeFragment extends Fragment {
+
+    TextView eventView3;
+    EditText addIncomeBox;
+    String incomeValue;
 
     public IncomeFragment() {
     }
@@ -44,6 +49,12 @@ public class IncomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        int idView3 = getResources().getIdentifier("listOfIncomeAmounts", "id", getContext().getPackageName());
+        eventView3 = view.findViewById(idView3);
+
+        int idView4 = getResources().getIdentifier("amount", "id", getContext().getPackageName());
+        addIncomeBox = view.findViewById(idView4);
+
         int idView = getResources().getIdentifier("addIncomeButton", "id", getContext().getPackageName());
         View eventView = view.findViewById(idView);
         eventView.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +69,8 @@ public class IncomeFragment extends Fragment {
 
     public void saveIncomeMethod (View view) {
         Log.d( "Message:", "Success!");
+        incomeValue = addIncomeBox.getText().toString();
+        eventView3.setText(incomeValue);
     }
 
 }
