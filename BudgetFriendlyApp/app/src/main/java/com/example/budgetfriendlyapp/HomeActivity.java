@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -35,6 +36,15 @@ public class HomeActivity extends AppCompatActivity {
         incomeFragment=new IncomeFragment();
         expenseFragment=new ExpenseFragment();
         settingsFragment=new SettingsFragment();
+
+
+//        FrameLayout layout = new FrameLayout(this);
+//
+//        layout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
+//        layout.setId(R.id.expenseCards);
+//        setContentView(layout);
+//
+//        getSupportFragmentManager().beginTransaction().add(R.id.expenseCards,new ExpenseFragment()).commit();
 
         //first page that opens
         setFragment(homePageFragment);
@@ -82,3 +92,6 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 }
+
+
+
