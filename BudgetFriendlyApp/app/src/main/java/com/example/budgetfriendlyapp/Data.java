@@ -2,26 +2,26 @@ package com.example.budgetfriendlyapp;
 
 public class Data {
 
-    private String item, date, id, notes;
+    private String note, date, id, notes;
     private int amount;
 
     public Data() {
     }
 
     public Data(String item, String date, String id, String notes, int amount) {
-        this.item = item;
+        this.note = note;
         this.date = date;
         this.id = id;
         this.notes = notes;
         this.amount = amount;
     }
 
-    public String getItem() {
-        return item;
+    public String getNote() {
+        return note;
     }
 
-    public void setItem(String item) {
-        this.item = item;
+    public void setNote(String item) {
+        this.note = note;
     }
 
     public String getDate() {
