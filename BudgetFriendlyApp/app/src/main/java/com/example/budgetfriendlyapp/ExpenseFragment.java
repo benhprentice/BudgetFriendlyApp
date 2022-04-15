@@ -22,9 +22,6 @@ import androidx.fragment.app.Fragment;
  */
 public class ExpenseFragment extends Fragment {
 
-    // This is part of my change text test
-//    TextView eventView3;
-
     public ExpenseFragment() {
     }
 
@@ -58,10 +55,6 @@ public class ExpenseFragment extends Fragment {
                                      }
         );
 
-        // This is part of my change text test
-//        int idView3 = getResources().getIdentifier("expenseHeader", "id", getContext().getPackageName());
-//        eventView3 = view.findViewById(idView3);
-
         int idView2 = getResources().getIdentifier("cancelExpense", "id", getContext().getPackageName());
         View eventView2 = view.findViewById(idView2);
         eventView2.setOnClickListener(new OnClickListener() {
@@ -75,9 +68,6 @@ public class ExpenseFragment extends Fragment {
 
     public void saveExpenseMethod(View view) {
         Log.d("Message:", "Success!");
-        // This is part of my change text test
-//        eventView3.setText("Hello");
-
     }
 
     public void cancelExpenseMethod(View view) {
