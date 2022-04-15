@@ -137,7 +137,7 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/edittext_background"
                 android:hint="Add income amount"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:padding="15dp"
                 android:textColor="#000"
                 android:textColorHint="#000" />
