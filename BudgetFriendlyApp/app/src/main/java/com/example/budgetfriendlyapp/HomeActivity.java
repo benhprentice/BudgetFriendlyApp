@@ -37,15 +37,6 @@ public class HomeActivity extends AppCompatActivity {
         expenseFragment=new ExpenseFragment();
         settingsFragment=new SettingsFragment();
 
-
-//        FrameLayout layout = new FrameLayout(this);
-//
-//        layout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
-//        layout.setId(R.id.expenseCards);
-//        setContentView(layout);
-//
-//        getSupportFragmentManager().beginTransaction().add(R.id.expenseCards,new ExpenseFragment()).commit();
-
         //first page that opens
         setFragment(homePageFragment);
 

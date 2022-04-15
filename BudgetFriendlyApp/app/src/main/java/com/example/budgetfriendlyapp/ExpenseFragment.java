@@ -17,11 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ExpenseFragment extends Fragment {
 
-    // Add RecyclerView member
-    private RecyclerView recyclerView;
-
-    String[] names = {"Allison", "Saron", "Ben"};
-
     public ExpenseFragment() {
     }
 
@@ -39,12 +34,6 @@ public class ExpenseFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_expense,container, false);
-
-        // Add the following lines to create RecyclerView
-        recyclerView = view.findViewById(R.id.expenseCards);
-        recyclerView.setHasFixedSize(false);
-        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        recyclerView.setAdapter(new RecyclerAdapter(names));
 
         return view;
     }

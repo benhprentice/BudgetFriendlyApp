@@ -2,17 +2,15 @@ package com.example.budgetfriendlyapp;
 
 public class Data {
 
-    private String note, date, id, notes;
-    private int amount;
+    private String note, date;
+    private float amount;
 
     public Data() {
     }
 
-    public Data(String item, String date, String id, String notes, int amount) {
+    public Data( String date, String note, float amount) {
         this.note = note;
         this.date = date;
-        this.id = id;
-        this.notes = notes;
         this.amount = amount;
     }
 
@@ -32,27 +30,11 @@ public class Data {
         this.date = date;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getNotes() {
-        return notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-
-    public int getAmount() {
+    public float getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(float amount) {
         this.amount = amount;
     }
 }
