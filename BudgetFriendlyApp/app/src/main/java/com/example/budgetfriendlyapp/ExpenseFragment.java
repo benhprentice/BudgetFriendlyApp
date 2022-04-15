@@ -14,6 +14,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +27,8 @@ import androidx.fragment.app.Fragment;
  * create an instance of this fragment.
  */
 public class ExpenseFragment extends Fragment {
+
+    String[] names = {"Allison", "Saron", "Ben"};
 
     public ExpenseFragment() {
     }
@@ -32,13 +40,20 @@ public class ExpenseFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_expense, container, false);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_expense,container, false);
+
+        RecyclerView recyclerView =  view.findViewById(R.id.expenseCards);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        recyclerView.setAdapter(new RecyclerAdapter(names));
+
+        return view;
     }
 
     @Override
@@ -64,13 +79,16 @@ public class ExpenseFragment extends Fragment {
                                           }
                                       }
         );
+
     }
 
     public void saveExpenseMethod(View view) {
+
         Log.d("Message:", "Success!");
     }
 
     public void cancelExpenseMethod(View view) {
+
         Log.d("Message:", "Success!");
     }
 
