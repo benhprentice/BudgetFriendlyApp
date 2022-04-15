@@ -13,7 +13,8 @@
             android:id="@+id/expenseCardNote"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:text="This is some temp text"/>
 
         <TextView
             android:id="@+id/expenseCardAmount"

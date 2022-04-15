@@ -103,20 +103,32 @@
                     />
             </RelativeLayout>
         </LinearLayout>
-        <RelativeLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+<!--        <FrameLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/expenseCards"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/expenseCards"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginStart="1dp"-->
+<!--                android:layout_marginTop="1dp"-->
+<!--                android:layout_marginEnd="1dp"-->
+<!--                android:layout_marginBottom="1dp"-->
+<!--                android:visibility="visible"-->
+<!--                app:layout_constraintTop_toBottmOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"/>-->
 
-        </RelativeLayout>
+<!--        </FrameLayout>-->
 
     </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/expenseCards"
+        android:layout_width="match_parent"
+        android:layout_height="487dp" />
 
+</androidx.cardview.widget.CardView>
 
