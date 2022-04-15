@@ -21,9 +21,11 @@ import android.widget.TextView;
  */
 public class IncomeFragment extends Fragment {
 
+    Data data = new Data();
+
     TextView eventView3;
     EditText addIncomeBox;
-    String incomeValue;
+    Float incomeValue;
 
     TextView eventView4;
     EditText addCategoryBox;
@@ -78,9 +80,14 @@ public class IncomeFragment extends Fragment {
     }
 
     public void saveIncomeMethod (View view) {
-        Log.d( "Message:", "Success!");
-        incomeValue = addIncomeBox.getText().toString();
-        eventView3.setText(incomeValue);
+//        Log.d( "Message:", "Success!");
+//        incomeValue = addIncomeBox.getText().toString();
+//        eventView3.setText(incomeValue);
+        data.setAmount( Float.parseFloat(addIncomeBox.getText().toString()));
+        incomeValue = data.getAmount();
+        String incomeString = incomeValue.toString();
+        eventView3.setText(incomeString);
+        Float.parseFloat(addIncomeBox.getText().toString());
 
         categoryValue = addCategoryBox.getText().toString();
         eventView4.setText(categoryValue);
