@@ -83,6 +83,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         }
                         else{
                             mDialog.dismiss();
+                            startActivity(new Intent(getApplicationContext(),SlideActivity.class));
                             Toast.makeText(getApplicationContext(),"Registration Failed", Toast.LENGTH_SHORT).show();
                         }
                     }
