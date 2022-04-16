@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
         //comment if statement to bring back login page
 
-//        if (mAuth.getCurrentUser() != null) {
-//            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-//        }
+        if (mAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+        }
 
 
         mDialog = new ProgressDialog(this);
