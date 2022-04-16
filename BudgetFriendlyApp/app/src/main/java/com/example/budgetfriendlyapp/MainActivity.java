@@ -40,15 +40,11 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //comment if statement to bring back login page
-<<<<<<< Updated upstream
-        if (mAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-        }
-=======
-        /*if(mAuth.getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-        }*/
->>>>>>> Stashed changes
+
+//        if (mAuth.getCurrentUser() != null) {
+//            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+//        }
+
 
         mDialog = new ProgressDialog(this);
 
