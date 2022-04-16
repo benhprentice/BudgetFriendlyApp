@@ -56,14 +56,8 @@ public class IncomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        int idView3 = getResources().getIdentifier("listOfIncomeAmounts", "id", getContext().getPackageName());
-        eventView3 = view.findViewById(idView3);
-
         int idView4 = getResources().getIdentifier("amount", "id", getContext().getPackageName());
         addIncomeBox = view.findViewById(idView4);
-
-        int idView5 = getResources().getIdentifier("listOfIncomeNames", "id", getContext().getPackageName());
-        eventView4 = view.findViewById(idView5);
 
         int idView6 = getResources().getIdentifier("note", "id", getContext().getPackageName());
         addCategoryBox = view.findViewById(idView6);
@@ -84,11 +78,13 @@ public class IncomeFragment extends Fragment {
         data.addAmount( Float.parseFloat(addIncomeBox.getText().toString()));
         incomeValue = data.getAmount();
         String incomeString = incomeValue.toString();
-        eventView3.setText(incomeString);
+//        eventView3.setText(incomeString);
         Float.parseFloat(addIncomeBox.getText().toString());
 
+        Log.d("Message", incomeString);
+
         categoryValue = addCategoryBox.getText().toString();
-        eventView4.setText(categoryValue);
+//        eventView4.setText(categoryValue);
     }
 
 }

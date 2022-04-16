@@ -8,11 +8,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.ListFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,13 +24,13 @@ public class ExpenseFragment extends Fragment {
 
     static private Data data;
 
-    TextView eventView3;
     EditText addExpenseBox;
     Float expenseValue;
 
-    TextView eventView4;
     EditText addNoteBox;
     String noteValue;
+
+    ListView expenseCards;
 
     public ExpenseFragment(Data data) {
         this.data = data;
@@ -47,6 +50,10 @@ public class ExpenseFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_expense,container, false);
+//
+//        String[] listItems;
+//
+//        ListView listView = new listView.findViewById(R);
 
         return view;
     }
@@ -81,12 +88,17 @@ public class ExpenseFragment extends Fragment {
         int idView4 = getResources().getIdentifier("expenseNote", "id", getContext().getPackageName());
         addNoteBox = view.findViewById(idView4);
 
+        int idView5 = getResources().getIdentifier("expenseCards", "id", getContext().getPackageName());
+        expenseCards = view.findViewById(idView5);
+
     }
 
     public void saveExpenseMethod(View view) {
 
         data.subAmount( Float.parseFloat(addExpenseBox.getText().toString()));
-//        expenseValue = data.getAmount();
+        expenseValue = data.getAmount();
+
+        
 //        String incomeString = expenseValue.toString();
 //        eventView3.setText(incomeString);
 //        Float.parseFloat(addExpenseBox.getText().toString());

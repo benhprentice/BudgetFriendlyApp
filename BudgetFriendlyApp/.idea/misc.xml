@@ -23,8 +23,9 @@
         <entry key="app/src/main/res/layout/expense_cards.xml" value="0.22760416666666666" />
         <entry key="app/src/main/res/layout/fragment_expense.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.228125" />
-        <entry key="app/src/main/res/layout/fragment_income.xml" value="0.24375" />
+        <entry key="app/src/main/res/layout/fragment_income.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.22760416666666666" />
+        <entry key="app/src/main/res/layout/list_element.xml" value="0.228125" />
         <entry key="app/src/main/res/layout/slidescreen.xml" value="0.15070921985815602" />
       </map>
     </option>
