@@ -114,15 +114,14 @@ public class IncomeFragment extends Fragment {
 
         data.addAmount( parseFloat );
 
-
-// add new list item
-        listItems.add(0, "+ $ " + incomeString);
-        listViewAdapter.notifyDataSetChanged();
-
-
-// add category data
+        // add category data
         Log.d("Message", incomeString);
         categoryValue = addCategoryBox.getText().toString();
+
+
+// add new list item
+        listItems.add(0, "+ $ " + incomeString + "    " + categoryValue);
+        listViewAdapter.notifyDataSetChanged();
 
         // clear form
         addIncomeBox.setText("");

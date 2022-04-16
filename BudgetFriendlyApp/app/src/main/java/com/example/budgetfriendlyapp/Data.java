@@ -2,15 +2,14 @@ package com.example.budgetfriendlyapp;
 
 public class Data {
 
-    private String note, date;
+    private String note;
     private float amount, budget;
 
     public Data() {
     }
 
-    public Data( String date, String note, float amount, float budget ) {
+    public Data( String note, float amount, float budget ) {
         this.note = note;
-        this.date = date;
         this.amount = amount;
         this.budget = budget;
     }
@@ -21,14 +20,6 @@ public class Data {
 
     public void setNote(String item) {
         this.note = note;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
     }
 
     public float getAmount() {

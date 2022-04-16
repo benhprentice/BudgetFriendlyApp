@@ -10,17 +10,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.ListFragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
 import java.util.Vector;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -110,14 +104,14 @@ public class ExpenseFragment extends Fragment {
     public void saveExpenseMethod(View view) {
 
         expenseString = addExpenseBox.getText().toString();
-//        String.format("%.2f", expenseString);
 
-        listItems.add(0, "- $ " + expenseString);
-        listViewAdapter.notifyDataSetChanged();
         data.subAmount( Float.parseFloat(expenseString));
         expenseValue = data.getAmount();
 
         noteValue = addNoteBox.getText().toString();
+
+        listItems.add(0, "- $ " + expenseString + "    " + noteValue);
+        listViewAdapter.notifyDataSetChanged();
 
         addExpenseBox.setText("");
         addNoteBox.setText("");
