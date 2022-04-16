@@ -116,6 +116,9 @@ public class ExpenseFragment extends Fragment {
 
     public void cancelExpenseMethod(View view) {
 
+        addExpenseBox.setText("");
+        addNoteBox.setText("");
+
         Log.d("Message:", "Success!");
     }
 
