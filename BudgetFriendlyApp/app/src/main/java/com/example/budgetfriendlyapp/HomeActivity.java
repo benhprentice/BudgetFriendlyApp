@@ -18,6 +18,8 @@ public class HomeActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private FrameLayout frameLayout;
 
+    private Data data = new Data();
+
     //Fragment
     private HomePageFragment homePageFragment;
     private IncomeFragment incomeFragment;
@@ -33,8 +35,8 @@ public class HomeActivity extends AppCompatActivity {
         frameLayout=findViewById(R.id.main_frame);
 
         homePageFragment=new HomePageFragment();
-        incomeFragment=new IncomeFragment();
-        expenseFragment=new ExpenseFragment();
+        incomeFragment=new IncomeFragment(data);
+        expenseFragment=new ExpenseFragment(data);
         settingsFragment=new SettingsFragment();
 
         //first page that opens

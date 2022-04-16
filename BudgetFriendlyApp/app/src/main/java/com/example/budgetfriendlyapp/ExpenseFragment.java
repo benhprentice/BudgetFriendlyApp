@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,11 +19,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ExpenseFragment extends Fragment {
 
-    public ExpenseFragment() {
+    static private Data data;
+
+    TextView eventView3;
+    EditText addExpenseBox;
+    Float expenseValue;
+
+    TextView eventView4;
+    EditText addNoteBox;
+    String noteValue;
+
+    public ExpenseFragment(Data data) {
+        this.data = data;
     }
 
     public static ExpenseFragment newInstance(String param1, String param2) {
-        ExpenseFragment fragment = new ExpenseFragment();
+        ExpenseFragment fragment = new ExpenseFragment(data);
         return fragment;
     }
 
@@ -62,9 +75,24 @@ public class ExpenseFragment extends Fragment {
                                       }
         );
 
+        int idView3 = getResources().getIdentifier("expenseAmount", "id", getContext().getPackageName());
+        addExpenseBox = view.findViewById(idView3);
+
+        int idView4 = getResources().getIdentifier("expenseNote", "id", getContext().getPackageName());
+        addNoteBox = view.findViewById(idView4);
+
     }
 
     public void saveExpenseMethod(View view) {
+
+        data.subAmount( Float.parseFloat(addExpenseBox.getText().toString()));
+//        expenseValue = data.getAmount();
+//        String incomeString = expenseValue.toString();
+//        eventView3.setText(incomeString);
+//        Float.parseFloat(addExpenseBox.getText().toString());
+
+        noteValue = addNoteBox.getText().toString();
+//        eventView4.setText(noteValue);
 
         Log.d("Message:", "Success!");
     }

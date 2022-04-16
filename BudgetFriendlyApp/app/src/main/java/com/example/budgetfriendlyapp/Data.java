@@ -34,7 +34,9 @@ public class Data {
         return amount;
     }
 
-    public void setAmount(float amount) {
+    public void addAmount(float amount) {
         this.amount += amount;
     }
+
+    public void subAmount(float amount) { this.amount -= amount; }
 }
