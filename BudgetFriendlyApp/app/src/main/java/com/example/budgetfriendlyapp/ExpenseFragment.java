@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -19,6 +20,9 @@ import androidx.fragment.app.ListFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+import java.util.Vector;
+
 
 public class ExpenseFragment extends Fragment {
 
@@ -30,7 +34,9 @@ public class ExpenseFragment extends Fragment {
     EditText addNoteBox;
     String noteValue;
 
-    ListView expenseCards;
+    Vector<String> listItems = new Vector<>();
+
+    ArrayAdapter<String> listViewAdapter;
 
     public ExpenseFragment(Data data) {
         this.data = data;
@@ -50,10 +56,16 @@ public class ExpenseFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_expense,container, false);
-//
-//        String[] listItems;
-//
-//        ListView listView = new listView.findViewById(R);
+
+        ListView listView = (ListView) view.findViewById(R.id.expenseCards);
+
+        listViewAdapter = new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_list_item_1,
+                listItems
+        );
+
+        listView.setAdapter(listViewAdapter);
 
         return view;
     }
@@ -88,15 +100,15 @@ public class ExpenseFragment extends Fragment {
         int idView4 = getResources().getIdentifier("expenseNote", "id", getContext().getPackageName());
         addNoteBox = view.findViewById(idView4);
 
-        int idView5 = getResources().getIdentifier("expenseCards", "id", getContext().getPackageName());
-        expenseCards = view.findViewById(idView5);
-
     }
 
     public void saveExpenseMethod(View view) {
 
+        listItems.add(0, addExpenseBox.getText().toString());
+        listViewAdapter.notifyDataSetChanged();
         data.subAmount( Float.parseFloat(addExpenseBox.getText().toString()));
         expenseValue = data.getAmount();
+
 
         
 //        String incomeString = expenseValue.toString();
