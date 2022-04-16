@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView=findViewById(R.id.bottomNavigationBar);
         frameLayout=findViewById(R.id.main_frame);
 
-        homePageFragment=new HomePageFragment();
+        homePageFragment=new HomePageFragment(data);
         incomeFragment=new IncomeFragment(data);
         expenseFragment=new ExpenseFragment(data);
         settingsFragment=new SettingsFragment();

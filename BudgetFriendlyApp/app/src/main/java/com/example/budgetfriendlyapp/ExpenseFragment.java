@@ -104,19 +104,12 @@ public class ExpenseFragment extends Fragment {
 
     public void saveExpenseMethod(View view) {
 
-        listItems.add(0, addExpenseBox.getText().toString());
+        listItems.add(0, "- $ " + addExpenseBox.getText().toString());
         listViewAdapter.notifyDataSetChanged();
         data.subAmount( Float.parseFloat(addExpenseBox.getText().toString()));
         expenseValue = data.getAmount();
 
-
-        
-//        String incomeString = expenseValue.toString();
-//        eventView3.setText(incomeString);
-//        Float.parseFloat(addExpenseBox.getText().toString());
-
         noteValue = addNoteBox.getText().toString();
-//        eventView4.setText(noteValue);
 
         Log.d("Message:", "Success!");
     }

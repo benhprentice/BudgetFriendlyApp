@@ -10,9 +10,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.Vector;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,13 +27,15 @@ public class IncomeFragment extends Fragment {
 
     static private Data data;
 
-    TextView eventView3;
     EditText addIncomeBox;
     Float incomeValue;
 
-    TextView eventView4;
     EditText addCategoryBox;
     String categoryValue;
+
+    Vector<String> listItems = new Vector<>();
+
+    ArrayAdapter<String> listViewAdapter;
 
     public IncomeFragment(Data data) {
         this.data = data;
@@ -48,8 +54,20 @@ public class IncomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_income, container, false);
+
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_income,container, false);
+
+        ListView listView = (ListView) view.findViewById(R.id.expenseCards2);
+
+        listViewAdapter = new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_list_item_1,
+                listItems
+        );
+
+        listView.setAdapter(listViewAdapter);
+
+        return view;
     }
 
     @Override
@@ -75,16 +93,17 @@ public class IncomeFragment extends Fragment {
     }
 
     public void saveIncomeMethod (View view) {
+
+        listItems.add(0, "+ $ " + addIncomeBox.getText().toString());
+        listViewAdapter.notifyDataSetChanged();
         data.addAmount( Float.parseFloat(addIncomeBox.getText().toString()));
         incomeValue = data.getAmount();
         String incomeString = incomeValue.toString();
-//        eventView3.setText(incomeString);
         Float.parseFloat(addIncomeBox.getText().toString());
 
         Log.d("Message", incomeString);
 
         categoryValue = addCategoryBox.getText().toString();
-//        eventView4.setText(categoryValue);
     }
 
 }
