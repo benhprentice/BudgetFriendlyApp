@@ -22,17 +22,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 import java.util.Vector;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 
 public class ExpenseFragment extends Fragment {
 
     static private Data data;
 
+    NumberFormat nf = new DecimalFormat("##.##");
+
     EditText addExpenseBox;
     Float expenseValue;
 
     EditText addNoteBox;
     String noteValue;
+    String expenseString;
 
     Vector<String> listItems = new Vector<>();
 
@@ -104,12 +109,18 @@ public class ExpenseFragment extends Fragment {
 
     public void saveExpenseMethod(View view) {
 
-        listItems.add(0, "- $ " + addExpenseBox.getText().toString());
+        expenseString = addExpenseBox.getText().toString();
+//        String.format("%.2f", expenseString);
+
+        listItems.add(0, "- $ " + expenseString);
         listViewAdapter.notifyDataSetChanged();
-        data.subAmount( Float.parseFloat(addExpenseBox.getText().toString()));
+        data.subAmount( Float.parseFloat(expenseString));
         expenseValue = data.getAmount();
 
         noteValue = addNoteBox.getText().toString();
+
+        addExpenseBox.setText("");
+        addNoteBox.setText("");
 
         Log.d("Message:", "Success!");
     }

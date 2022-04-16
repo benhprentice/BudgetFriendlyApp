@@ -11,11 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Vector;
 
 /**
@@ -27,11 +27,15 @@ public class IncomeFragment extends Fragment {
 
     static private Data data;
 
+    NumberFormat nf = new DecimalFormat("##.##");
+
+    float parseFloat;
+
     EditText addIncomeBox;
-    Float incomeValue;
 
     EditText addCategoryBox;
     String categoryValue;
+    String incomeString;
 
     Vector<String> listItems = new Vector<>();
 
@@ -90,20 +94,44 @@ public class IncomeFragment extends Fragment {
                                      }
         );
 
+        int idView2 = getResources().getIdentifier("cancelIncome", "id", getContext().getPackageName());
+        View eventView2 = view.findViewById(idView2);
+        eventView2.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View view) {
+                                              cancelIncomeMethod(view);
+                                          }
+                                      }
+        );
+
     }
 
     public void saveIncomeMethod (View view) {
 
-        listItems.add(0, "+ $ " + addIncomeBox.getText().toString());
+        incomeString = addIncomeBox.getText().toString();
+
+        parseFloat = Float.parseFloat(incomeString);
+
+        data.addAmount( parseFloat );
+
+
+// add new list item
+        listItems.add(0, "+ $ " + incomeString);
         listViewAdapter.notifyDataSetChanged();
-        data.addAmount( Float.parseFloat(addIncomeBox.getText().toString()));
-        incomeValue = data.getAmount();
-        String incomeString = incomeValue.toString();
-        Float.parseFloat(addIncomeBox.getText().toString());
 
+
+// add category data
         Log.d("Message", incomeString);
-
         categoryValue = addCategoryBox.getText().toString();
+
+        // clear form
+        addIncomeBox.setText("");
+        addCategoryBox.setText("");
+    }
+
+    private void cancelIncomeMethod(View view) {
+        addIncomeBox.setText("");
+        addCategoryBox.setText("");
     }
 
 }

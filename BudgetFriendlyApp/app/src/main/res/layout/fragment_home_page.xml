@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Current Balance"
+                android:text="Current Total Balance"
                 android:textColor="@color/white"
                 android:textSize="18sp">
 
@@ -54,6 +54,26 @@
 
             <TextView
                 android:id="@+id/currentBalance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="18dp"
+                android:background="@drawable/edittext_background"
+                android:padding="15dp"
+                android:textColor="#000"
+                android:textColorHint="#000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Monthly Balance"
+                android:textColor="@color/white"
+                android:textSize="18sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/monthlyBalance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"

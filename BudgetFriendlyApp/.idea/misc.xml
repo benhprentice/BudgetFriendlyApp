@@ -21,10 +21,10 @@
         <entry key="app/src/main/res/layout/activity_slide_view_pager_adapter.xml" value="0.13148148148148148" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.15833333333333333" />
         <entry key="app/src/main/res/layout/expense_cards.xml" value="0.22760416666666666" />
-        <entry key="app/src/main/res/layout/fragment_expense.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_expense.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.228125" />
         <entry key="app/src/main/res/layout/fragment_income.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.22760416666666666" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.25" />
         <entry key="app/src/main/res/layout/list_element.xml" value="0.228125" />
         <entry key="app/src/main/res/layout/slidescreen.xml" value="0.15070921985815602" />
       </map>

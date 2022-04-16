@@ -23,10 +23,13 @@ public class HomePageFragment extends Fragment {
     static private Data data;
 
     TextView currentBalanceBox;
+    TextView monthlyBalanceBox;
 
     Float currentBalance;
+    Float monthlyBalance;
 
     String currentBalanceString;
+    String monthlyBalanceString;
 
     public HomePageFragment(Data data) { this.data = data;
     }
@@ -56,11 +59,20 @@ public class HomePageFragment extends Fragment {
         int idView4 = getResources().getIdentifier("currentBalance", "id", getContext().getPackageName());
         currentBalanceBox = view.findViewById(idView4);
 
+        int idView5 = getResources().getIdentifier("monthlyBalance", "id", getContext().getPackageName());
+        monthlyBalanceBox = view.findViewById(idView5);
+
         currentBalance = data.getAmount();
 
         currentBalanceString = currentBalance.toString();
 
         currentBalanceBox.setText("$ " + currentBalanceString);
+
+        monthlyBalance = data.getBudget();
+
+        monthlyBalanceString = monthlyBalance.toString();
+
+        monthlyBalanceBox.setText("$ " + monthlyBalanceString);
 
     }
 

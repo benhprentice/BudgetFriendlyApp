@@ -3,15 +3,16 @@ package com.example.budgetfriendlyapp;
 public class Data {
 
     private String note, date;
-    private float amount;
+    private float amount, budget;
 
     public Data() {
     }
 
-    public Data( String date, String note, float amount) {
+    public Data( String date, String note, float amount, float budget ) {
         this.note = note;
         this.date = date;
         this.amount = amount;
+        this.budget = budget;
     }
 
     public String getNote() {
@@ -38,5 +39,15 @@ public class Data {
         this.amount += amount;
     }
 
-    public void subAmount(float amount) { this.amount -= amount; }
+    public void subAmount(float amount) {
+        this.amount -= amount;
+        this.budget -= amount;
+    }
+
+    public void setBudget(float budget) { this.budget = budget; }
+
+    public float getBudget() {
+        return budget; }
 }
+
+

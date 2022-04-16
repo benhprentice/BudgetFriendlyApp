@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
         homePageFragment=new HomePageFragment(data);
         incomeFragment=new IncomeFragment(data);
         expenseFragment=new ExpenseFragment(data);
-        settingsFragment=new SettingsFragment();
+        settingsFragment=new SettingsFragment(data);
 
         //first page that opens
         setFragment(homePageFragment);
