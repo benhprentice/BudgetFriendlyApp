@@ -53,8 +53,8 @@
                 android:hint="Enter amount"
                 android:inputType="numberDecimal"
                 android:padding="15dp"
-                android:textColor="#000"
-                android:textColorHint="#000" />
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
             <EditText
                 android:id="@+id/expenseNote"
@@ -64,8 +64,8 @@
                 android:background="@drawable/edittext_background"
                 android:hint="Enter note"
                 android:padding="15dp"
-                android:textColor="#000"
-                android:textColorHint="#000" />
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
             <LinearLayout
                 android:layout_width="match_parent"

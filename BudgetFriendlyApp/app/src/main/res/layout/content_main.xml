@@ -13,7 +13,7 @@
         android:layout_alignParentBottom="true"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
-        android:background="@color/expense_color"
+        android:background="@color/settings_color"
         app:menu="@menu/bottommenu"
         android:layout_alignParentStart="true">
 

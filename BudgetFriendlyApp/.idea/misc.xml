@@ -15,16 +15,19 @@
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.209" />
         <entry key="app/src/main/res/drawable/background_color.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/edittext_background.xml" value="0.209" />
+        <entry key="app/src/main/res/drawable/edittext_btns.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/possibleback.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.2296875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_registration.xml" value="0.2296875" />
+        <entry key="app/src/main/res/layout/activity_registration.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_reset.xml" value="0.2296875" />
         <entry key="app/src/main/res/layout/activity_slide.xml" value="0.13148148148148148" />
         <entry key="app/src/main/res/layout/activity_slide_view_pager_adapter.xml" value="0.13148148148148148" />
+        <entry key="app/src/main/res/layout/appbar.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.15833333333333333" />
         <entry key="app/src/main/res/layout/expense_cards.xml" value="0.22760416666666666" />
         <entry key="app/src/main/res/layout/fragment_expense.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.228125" />
+        <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_income.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.25" />
         <entry key="app/src/main/res/layout/list_element.xml" value="0.228125" />
@@ -37,5 +40,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.335" />
+      </ProjectState>
+    </option>
   </component>
 </project>

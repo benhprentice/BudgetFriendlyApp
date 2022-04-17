@@ -95,19 +95,19 @@ public class SlideViewPagerAdapter extends PagerAdapter {
                 ind2.setImageResource(R.drawable.selected);
                 ind3.setImageResource(R.drawable.unselected);
 
-                guidelines.setText("What's the + and - mean?");
-                description.setText("You'll be putting in your source(s) of income in the (+) and your expenses in the (-) section.");
+                guidelines.setText("Income and Expense!");
+                description.setText("You'll be putting in your source(s) of income in the (+) and your expenses in the (-) section. To delete an item simply hold down the chosen item!");
                 back.setVisibility(View.VISIBLE);
                 forward.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                logo.setImageResource(R.drawable.settings);
+                logo.setImageResource(R.drawable.inandex);
                 ind1.setImageResource(R.drawable.unselected);
                 ind2.setImageResource(R.drawable.unselected);
                 ind3.setImageResource(R.drawable.selected);
 
-                guidelines.setText("Quick access:");
-                description.setText("You can easily see your monthly report from the home icon and control your notifications from the settings icon!");
+                guidelines.setText("Almost Done!");
+                description.setText("When you click the settings icon, you can input your desired monthly budget amount!");
                 forward.setVisibility(View.GONE);
                 back.setVisibility(View.VISIBLE);
                 break;

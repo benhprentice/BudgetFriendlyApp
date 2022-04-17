@@ -51,22 +51,19 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.homepage:
                         setFragment(homePageFragment);
                         //changes whole row but will eventually change to single sections to show page change
-                        bottomNavigationView.setItemBackgroundResource(R.color.dashboard_color);
                         return true;
 
                     case R.id.income:
                         setFragment(incomeFragment);
-                        bottomNavigationView.setItemBackgroundResource(R.color.income_color);
                         return true;
 
                     case R.id.expense:
                         setFragment(expenseFragment);
-                        bottomNavigationView.setItemBackgroundResource(R.color.expense_color);
+
                         return true;
 
                     case R.id.settings:
                         setFragment(settingsFragment);
-                        bottomNavigationView.setItemBackgroundResource(R.color.settings_color);
                         return true;
 
                     default:

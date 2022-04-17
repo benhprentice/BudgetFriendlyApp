@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:id="@+id/my_toolbar"
             app:title="Budget Friendly"
-            android:background="@color/expense_color"
+            android:background="@color/settings_color"
             app:titleTextColor="@android:color/white"
             android:layout_height="wrap_content">
 
