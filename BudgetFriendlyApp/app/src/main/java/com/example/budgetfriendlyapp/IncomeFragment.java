@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.Vector;
 
 /**
@@ -38,6 +36,7 @@ public class IncomeFragment extends Fragment {
     String categoryValue;
 
     Vector<String> listItems = new Vector<>();
+    Vector<Double> listAmounts = new Vector<>();
 
     ArrayAdapter<String> listViewAdapter;
 
@@ -125,7 +124,7 @@ public class IncomeFragment extends Fragment {
 
 
         // add new list item
-//        incomeString = currency.format(incomeString);
+        listAmounts.add(parseDouble);
         listItems.add(0, "+ $ " + currency.format(parseDouble) + "    " + categoryValue);
         listViewAdapter.notifyDataSetChanged();
 
@@ -141,7 +140,7 @@ public class IncomeFragment extends Fragment {
 
     public void removeItem(int i) {
         listViewAdapter.remove(listViewAdapter.getItem(i));
-        data.removeIncomeAmount( parseDouble );
+        data.removeIncomeAmount( listAmounts.get(i) );
     }
 
 }

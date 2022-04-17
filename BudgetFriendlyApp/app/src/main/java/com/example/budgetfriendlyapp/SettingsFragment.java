@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -95,14 +94,10 @@ public class SettingsFragment extends Fragment {
 
         data.setBudget( Double.parseDouble(addBudgetBox.getText().toString()));
         addBudgetBox.setText("");
-
-        Log.d("Message:", "Success!");
     }
 
     public void cancelBudgetMethod(View view) {
 
         addBudgetBox.setText("");
-
-        Log.d("Message:", "Success!");
     }
 }

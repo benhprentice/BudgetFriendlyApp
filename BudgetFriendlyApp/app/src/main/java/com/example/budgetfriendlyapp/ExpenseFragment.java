@@ -2,7 +2,6 @@ package com.example.budgetfriendlyapp;
 
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,8 +17,6 @@ import androidx.fragment.app.Fragment;
 
 import java.util.Vector;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
-
 
 public class ExpenseFragment extends Fragment {
 
@@ -32,6 +29,7 @@ public class ExpenseFragment extends Fragment {
     String noteValue;
 
     Vector<String> listItems = new Vector<>();
+    Vector<Double> listAmounts = new Vector<>();
 
     ArrayAdapter<String> listViewAdapter;
 
@@ -116,26 +114,22 @@ public class ExpenseFragment extends Fragment {
 
         noteValue = addNoteBox.getText().toString();
 
+        listAmounts.add(expenseValue);
         listItems.add(0, "- $ " + currency.format(expenseValue) + "    " + noteValue);
         listViewAdapter.notifyDataSetChanged();
 
         addExpenseBox.setText("");
         addNoteBox.setText("");
-
-        Log.d("Message:", "Success!");
     }
 
     public void cancelExpenseMethod(View view) {
-
         addExpenseBox.setText("");
         addNoteBox.setText("");
-
-        Log.d("Message:", "Success!");
     }
 
     public void removeItem(int i) {
         listViewAdapter.remove(listViewAdapter.getItem(i));
-        data.removeAmount( expenseValue );
+        data.removeAmount( listAmounts.get(i) );
     }
 
 }
