@@ -27,15 +27,14 @@ public class IncomeFragment extends Fragment {
 
     static private Data data;
 
-    NumberFormat nf = new DecimalFormat("##.##");
+    DecimalFormat currency = new DecimalFormat("###,###,##0.00");
 
-    float parseFloat;
+    double parseDouble;
 
     EditText addIncomeBox;
 
     EditText addCategoryBox;
     String categoryValue;
-    String incomeString;
 
     Vector<String> listItems = new Vector<>();
 
@@ -108,19 +107,17 @@ public class IncomeFragment extends Fragment {
 
     public void saveIncomeMethod (View view) {
 
-        incomeString = addIncomeBox.getText().toString();
-
-        parseFloat = Float.parseFloat(incomeString);
-
-        data.addAmount( parseFloat );
+        parseDouble = Double.parseDouble(addIncomeBox.getText().toString());
+        currency.format(parseDouble);
+        data.addAmount( parseDouble );
 
         // add category data
-        Log.d("Message", incomeString);
         categoryValue = addCategoryBox.getText().toString();
 
 
-// add new list item
-        listItems.add(0, "+ $ " + incomeString + "    " + categoryValue);
+        // add new list item
+//        incomeString = currency.format(incomeString);
+        listItems.add(0, "+ $ " + currency.format(parseDouble) + "    " + categoryValue);
         listViewAdapter.notifyDataSetChanged();
 
         // clear form

@@ -1,9 +1,11 @@
 package com.example.budgetfriendlyapp;
 
+import java.text.DecimalFormat;
+
 public class Data {
 
     private String note;
-    private float amount = 0,
+    private double amount = 0,
             budget = 0;
 
     public Data() {
@@ -17,24 +19,23 @@ public class Data {
         this.note = note;
     }
 
-    public float getAmount() {
-        return amount;
+    public double getAmount() { return amount;
     }
 
-    public void addAmount(float amount) {
+    public void addAmount(double amount) {
         this.amount += amount;
     }
 
-    public void subAmount(float amount) {
+    public void subAmount(double amount) {
         this.amount -= amount;
         this.budget -= amount;
     }
 
-    public void setBudget(float budget) {
+    public void setBudget(double budget) {
         this.budget = budget;
         if ( this.budget > amount ) this.budget = amount; }
 
-    public float getBudget() {
+    public double getBudget() {
         return budget; }
 }
 

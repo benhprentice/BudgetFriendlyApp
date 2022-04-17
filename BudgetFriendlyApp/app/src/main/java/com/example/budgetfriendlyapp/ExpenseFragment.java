@@ -24,18 +24,17 @@ public class ExpenseFragment extends Fragment {
 
     static private Data data;
 
-    NumberFormat nf = new DecimalFormat("##.##");
-
     EditText addExpenseBox;
-    Float expenseValue;
+    Double expenseValue;
 
     EditText addNoteBox;
     String noteValue;
-    String expenseString;
 
     Vector<String> listItems = new Vector<>();
 
     ArrayAdapter<String> listViewAdapter;
+
+    DecimalFormat currency = new DecimalFormat("###,###,##0.00");
 
     public ExpenseFragment(Data data) {
         this.data = data;
@@ -103,14 +102,12 @@ public class ExpenseFragment extends Fragment {
 
     public void saveExpenseMethod(View view) {
 
-        expenseString = addExpenseBox.getText().toString();
-
-        data.subAmount( Float.parseFloat(expenseString));
-        expenseValue = data.getAmount();
+        expenseValue = Double.parseDouble(addExpenseBox.getText().toString());
+        data.subAmount( expenseValue );
 
         noteValue = addNoteBox.getText().toString();
 
-        listItems.add(0, "- $ " + expenseString + "    " + noteValue);
+        listItems.add(0, "- $ " + currency.format(expenseValue) + "    " + noteValue);
         listViewAdapter.notifyDataSetChanged();
 
         addExpenseBox.setText("");

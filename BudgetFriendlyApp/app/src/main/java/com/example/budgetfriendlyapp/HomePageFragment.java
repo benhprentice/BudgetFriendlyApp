@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.text.DecimalFormat;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HomePageFragment#newInstance} factory method to
@@ -25,13 +27,13 @@ public class HomePageFragment extends Fragment {
     TextView currentBalanceBox;
     TextView monthlyBalanceBox;
 
-    Float currentBalance;
-    Float monthlyBalance;
+    Double currentBalance;
+    Double monthlyBalance;
 
-    String currentBalanceString;
-    String monthlyBalanceString;
+    DecimalFormat currency = new DecimalFormat("###,###,##0.00");
 
-    public HomePageFragment(Data data) { this.data = data;
+    public HomePageFragment(Data data) {
+        this.data = data;
     }
 
     public static HomePageFragment newInstance(String param1, String param2) {
@@ -64,15 +66,11 @@ public class HomePageFragment extends Fragment {
 
         currentBalance = data.getAmount();
 
-        currentBalanceString = currentBalance.toString();
-
-        currentBalanceBox.setText("$ " + currentBalanceString);
+        currentBalanceBox.setText("$ " + currency.format(currentBalance));
 
         monthlyBalance = data.getBudget();
 
-        monthlyBalanceString = monthlyBalance.toString();
-
-        monthlyBalanceBox.setText("$ " + monthlyBalanceString);
+        monthlyBalanceBox.setText("$ " + currency.format(monthlyBalance));
 
     }
 

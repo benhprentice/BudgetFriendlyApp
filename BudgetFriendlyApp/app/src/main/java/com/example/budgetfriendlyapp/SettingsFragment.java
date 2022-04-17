@@ -22,7 +22,6 @@ public class SettingsFragment extends Fragment {
     static private Data data;
 
     EditText addBudgetBox;
-    Float budgetValue;
 
     public SettingsFragment(Data data) { this.data = data;
     }
@@ -75,7 +74,7 @@ public class SettingsFragment extends Fragment {
 
     public void saveBudgetMethod(View view) {
 
-        data.setBudget( Float.parseFloat(addBudgetBox.getText().toString()));
+        data.setBudget( Double.parseDouble(addBudgetBox.getText().toString()));
         addBudgetBox.setText("");
 
         Log.d("Message:", "Success!");
