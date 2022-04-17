@@ -32,6 +32,7 @@ public class ExpenseFragment extends Fragment {
     String noteValue;
 
     Vector<String> listItems = new Vector<>();
+    Vector<Double> listAmounts = new Vector<>();
 
     ArrayAdapter<String> listViewAdapter;
 
@@ -116,6 +117,7 @@ public class ExpenseFragment extends Fragment {
 
         noteValue = addNoteBox.getText().toString();
 
+        listAmounts.add(expenseValue);
         listItems.add(0, "- $ " + currency.format(expenseValue) + "    " + noteValue);
         listViewAdapter.notifyDataSetChanged();
 
@@ -135,7 +137,7 @@ public class ExpenseFragment extends Fragment {
 
     public void removeItem(int i) {
         listViewAdapter.remove(listViewAdapter.getItem(i));
-        data.removeAmount( expenseValue );
+        data.removeAmount( listAmounts.get(i) );
     }
 
 }

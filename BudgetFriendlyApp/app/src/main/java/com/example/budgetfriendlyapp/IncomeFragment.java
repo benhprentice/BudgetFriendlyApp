@@ -38,6 +38,7 @@ public class IncomeFragment extends Fragment {
     String categoryValue;
 
     Vector<String> listItems = new Vector<>();
+    Vector<Double> listAmounts = new Vector<>();
 
     ArrayAdapter<String> listViewAdapter;
 
@@ -126,6 +127,7 @@ public class IncomeFragment extends Fragment {
 
         // add new list item
 //        incomeString = currency.format(incomeString);
+        listAmounts.add(parseDouble);
         listItems.add(0, "+ $ " + currency.format(parseDouble) + "    " + categoryValue);
         listViewAdapter.notifyDataSetChanged();
 
@@ -141,7 +143,7 @@ public class IncomeFragment extends Fragment {
 
     public void removeItem(int i) {
         listViewAdapter.remove(listViewAdapter.getItem(i));
-        data.removeIncomeAmount( parseDouble );
+        data.removeIncomeAmount( listAmounts.get(i) );
     }
 
 }
