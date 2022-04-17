@@ -99,7 +99,7 @@ public class SlideViewPagerAdapter extends PagerAdapter {
                 forward.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                logo.setImageResource(R.drawable.inandex);
+                logo.setImageResource(R.drawable.settingspage);
                 ind1.setImageResource(R.drawable.unselected);
                 ind2.setImageResource(R.drawable.unselected);
                 ind3.setImageResource(R.drawable.selected);
