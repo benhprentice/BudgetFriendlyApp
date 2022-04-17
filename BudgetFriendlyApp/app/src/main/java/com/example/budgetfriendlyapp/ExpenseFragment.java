@@ -123,16 +123,11 @@ public class ExpenseFragment extends Fragment {
 
         addExpenseBox.setText("");
         addNoteBox.setText("");
-
-        Log.d("Message:", "Success!");
     }
 
     public void cancelExpenseMethod(View view) {
-
         addExpenseBox.setText("");
         addNoteBox.setText("");
-
-        Log.d("Message:", "Success!");
     }
 
     public void removeItem(int i) {

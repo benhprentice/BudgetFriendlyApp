@@ -126,7 +126,6 @@ public class IncomeFragment extends Fragment {
 
 
         // add new list item
-//        incomeString = currency.format(incomeString);
         listAmounts.add(parseDouble);
         listItems.add(0, "+ $ " + currency.format(parseDouble) + "    " + categoryValue);
         listViewAdapter.notifyDataSetChanged();

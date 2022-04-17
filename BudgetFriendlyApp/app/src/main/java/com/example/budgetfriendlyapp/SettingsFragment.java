@@ -76,14 +76,10 @@ public class SettingsFragment extends Fragment {
 
         data.setBudget( Double.parseDouble(addBudgetBox.getText().toString()));
         addBudgetBox.setText("");
-
-        Log.d("Message:", "Success!");
     }
 
     public void cancelBudgetMethod(View view) {
 
         addBudgetBox.setText("");
-
-        Log.d("Message:", "Success!");
     }
 }
