@@ -1,5 +1,6 @@
 package com.example.budgetfriendlyapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,18 +11,26 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link SettingsFragment#newInstance} factory method to
  * create an instance of this fragment.
+ *
  */
+
+
 public class SettingsFragment extends Fragment {
 
     static private Data data;
+    private Button logout;
 
     EditText addBudgetBox;
+
 
     public SettingsFragment(Data data) { this.data = data;
     }
@@ -33,7 +42,9 @@ public class SettingsFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -68,6 +79,14 @@ public class SettingsFragment extends Fragment {
 
         int idView3 = getResources().getIdentifier("budgetAmount", "id", getContext().getPackageName());
         addBudgetBox = view.findViewById(idView3);
+
+        logout= view.findViewById(R.id.logOut);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+            }
+        });
 
     }
 
