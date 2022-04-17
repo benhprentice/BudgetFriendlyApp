@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mForgetPassword;
     private TextView mSignupHere;
 
+
     private ProgressDialog mDialog;
 
     //Firebase
@@ -39,11 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+
         //comment if statement to bring back login page
 
-        if (mAuth.getCurrentUser() != null) {
+        /*if (mAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-        }
+        }*/
 
 
         mDialog = new ProgressDialog(this);
@@ -94,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
+
+
 
         //Registration activity
 
