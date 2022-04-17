@@ -2,7 +2,6 @@ package com.example.budgetfriendlyapp;
 
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,8 +17,6 @@ import androidx.fragment.app.Fragment;
 
 import java.util.Vector;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
-
 
 public class ExpenseFragment extends Fragment {
 
