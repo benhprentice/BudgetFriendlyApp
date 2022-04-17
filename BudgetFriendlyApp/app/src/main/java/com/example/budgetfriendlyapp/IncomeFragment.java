@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -70,6 +71,14 @@ public class IncomeFragment extends Fragment {
 
         listView.setAdapter(listViewAdapter);
 
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                removeItem();
+                return false;
+            }
+        });
+
         return view;
     }
 
@@ -128,6 +137,11 @@ public class IncomeFragment extends Fragment {
     private void cancelIncomeMethod(View view) {
         addIncomeBox.setText("");
         addCategoryBox.setText("");
+    }
+
+    public void removeItem() {
+        listViewAdapter.remove(listViewAdapter.getItem(0));
+        data.removeIncomeAmount( parseDouble );
     }
 
 }

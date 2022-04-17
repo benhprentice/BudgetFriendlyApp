@@ -1,7 +1,5 @@
 package com.example.budgetfriendlyapp;
 
-import java.text.DecimalFormat;
-
 public class Data {
 
     private String note;
@@ -29,6 +27,15 @@ public class Data {
     public void subAmount(double amount) {
         this.amount -= amount;
         this.budget -= amount;
+    }
+
+    public void removeAmount(double amount) {
+        this.amount += amount;
+        this.budget += amount;
+    }
+
+    public void removeIncomeAmount (double amount) {
+        this.amount -= amount;
     }
 
     public void setBudget(double budget) {
