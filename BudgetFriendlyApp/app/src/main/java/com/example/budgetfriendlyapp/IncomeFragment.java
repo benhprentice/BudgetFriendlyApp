@@ -74,7 +74,7 @@ public class IncomeFragment extends Fragment {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                removeItem();
+                removeItem(i);
                 return false;
             }
         });
@@ -139,8 +139,8 @@ public class IncomeFragment extends Fragment {
         addCategoryBox.setText("");
     }
 
-    public void removeItem() {
-        listViewAdapter.remove(listViewAdapter.getItem(0));
+    public void removeItem(int i) {
+        listViewAdapter.remove(listViewAdapter.getItem(i));
         data.removeIncomeAmount( parseDouble );
     }
 

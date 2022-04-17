@@ -69,7 +69,7 @@ public class ExpenseFragment extends Fragment {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                removeItem();
+                removeItem(i);
                 return false;
             }
         });
@@ -133,8 +133,8 @@ public class ExpenseFragment extends Fragment {
         Log.d("Message:", "Success!");
     }
 
-    public void removeItem() {
-        listViewAdapter.remove(listViewAdapter.getItem(0));
+    public void removeItem(int i) {
+        listViewAdapter.remove(listViewAdapter.getItem(i));
         data.removeAmount( expenseValue );
     }
 
